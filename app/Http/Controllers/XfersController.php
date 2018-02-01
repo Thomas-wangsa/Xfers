@@ -27,9 +27,11 @@ class XfersController extends Controller
 	protected $balance;
 
 	public function __construct() {
-        $this->api_key = '2zsujd47H3-UmsxDL784beVnYbxCYCzL4psSbwZ_Ngk';
+        // modify api key
+        $this->api_key = 'RxCDBsWyVy5gUycgjxtoKHQxTdsiyzpeTzv62ykjG3A';
         Xfers::setApiKey($this->api_key);
-		Xfers::setSGSandbox();
+        // define ID Sandbox
+		Xfers::setIDSandbox();
 		$this->balance 			= User::retrieve()['available_balance'];
     }
 
@@ -69,7 +71,7 @@ class XfersController extends Controller
     		// move to catch conditional if failed/errors
 	    	Charge::create(array(
 	        'amount' 		=> $request->ammount,
-	        'currency' 		=> 'SGD',
+	        'currency' 		=> 'IDR',
 	        'order_id' 		=> $faker->uuid,
 	        'redirect'		=> 'false',
 	        'debit_only'	=> 'true'

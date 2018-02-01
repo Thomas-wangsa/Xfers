@@ -29,9 +29,9 @@ class XfersTest extends TestCase
     public function testExample() {
     	
     	// api key auth from https://docs.xfers.io/#get-account-info
-    	$api_key = '2zsujd47H3-UmsxDL784beVnYbxCYCzL4psSbwZ_Ngk';
+    	$api_key = 'RxCDBsWyVy5gUycgjxtoKHQxTdsiyzpeTzv62ykjG3A';
         Xfers::setApiKey($api_key);
-		Xfers::setSGSandbox(); 
+		Xfers::setIDSandbox(); 
 
       	// $data to set param in each function
         $data['balance']		= User::retrieve()['available_balance'];
@@ -76,8 +76,8 @@ class XfersTest extends TestCase
     	$this->get('/shop')
         ->assertStatus(200)
         ->assertSee("Shop Xfers!")
-        ->assertSee("Kindle (20.000)")
-        ->assertSee("Macbook (100.000)")
+        ->assertSee("Kindle (3.000.000)")
+        ->assertSee("Macbook (10.000.000)")
         ->assertSee("Balance : ".number_format($data['balance'],2));      
     }
 

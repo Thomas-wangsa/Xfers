@@ -43,14 +43,14 @@
             <div class="row">
                 <form method="POST" action="{{url('/buy')}}">
                     {{ csrf_field() }}
-                    <input type="hidden" name="ammount" value="20000">
+                    <input type="hidden" name="ammount" value="3000000">
                     <input type="hidden" name="item" value="kindle">
 
                     <div class="col-md-6">
                       <div class="thumbnail">
                           <img id="kindle" src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/dp/2017/820610209344910/kv_comp-chart_180x120._CB514442764_.png" alt="Lights" style="width:100%">
                           <div class="caption">
-                            <p> Kindle (20.000) </p>
+                            <p> Kindle (3.000.000) </p>
                           </div>
                         <button type="submit" id="kindle_submit" class="btn btn-primary">Buy</button>
                       </div>
@@ -59,14 +59,14 @@
 
                 <form method="POST" action="{{url('/buy')}}">
                     {{ csrf_field() }}
-                    <input type="hidden" name="ammount" value="100000">
+                    <input type="hidden" name="ammount" value="10000000">
                     <input type="hidden" name="item" value="mac">
 
                     <div class="col-md-6">
                       <div class="thumbnail">
                           <img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/m/ac/macbook/select/macbook-select-space-gray-201706?wid=452&hei=420&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1505775431709" alt="Nature" style="width:100%">
                           <div class="caption">
-                            <p> Macbook (100.000)</p>
+                            <p> Macbook (10.000.000)</p>
                             <button type="submit" id="mac_submit" class="btn btn-primary">Buy</button>
                           </div>
                       </div>
