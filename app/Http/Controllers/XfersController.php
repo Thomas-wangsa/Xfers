@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 // Xfers Depedency
 use Xfers\Xfers;
 use Xfers\User;
@@ -69,13 +70,18 @@ class XfersController extends Controller
     		
     		// POST https://sandbox.xfers.io/api/v3/charges
     		// move to catch conditional if failed/errors
-	    	Charge::create(array(
+	    	$response = Charge::create(array(
 	        'amount' 		=> $request->ammount,
 	        'currency' 		=> 'IDR',
 	        'order_id' 		=> $faker->uuid,
 	        'redirect'		=> 'false',
 	        'debit_only'	=> 'true'
 	    	));
+
+            // define checkout_url after create the charge
+            // request Mr. Winston.
+            return Redirect::to($response['checkout_url']);
+
 
 	    	// pass data to view
 	    	$data['transaction']	= $transaction;
